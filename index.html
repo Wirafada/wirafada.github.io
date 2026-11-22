@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seka Wira Firdana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE personal site, calm and direct, a student showing real work
+   IDEA an octagonal compass from a geometry notebook: eight directions, three lit
+   PICTURE the OCTAGON compass, drawn large on the green band, focus spokes heavy
+   COLOUR white ground, ink #0b0b10, signal green #00a862 band, mist #eafaf2; night #07130d
+   TYPE Space Grotesk 500/700 for display + Inter for text
+   LAYOUT nav, green hero (name + intro left, compass right), then full-width bands; phone: name, compass, links */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#07130d);--ink:light-dark(#0b0b10,#e6f4ec);--soft:light-dark(#4a5550,#9fb8ab);--green:#00a862;--ongreen:#04140c;--mist:light-dark(#eafaf2,#0d2219);--rule:light-dark(#d7e6dd,#1d3a2c);--pill:light-dark(#ffffff,#123024)}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(28px,3.4vw,40px);font-weight:700}
+h3{font-size:20px;font-weight:500}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(36px,5vw,72px);padding-inline:max(5vw,16px)}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:12px max(5vw,16px)}
+.brand{display:flex;align-items:center;gap:10px;font:700 18px "Space Grotesk",sans-serif;text-decoration:none;margin-right:auto}
+.brand svg{width:26px;height:26px}
+nav a.link{text-decoration:none;font-weight:500;padding:10px 2px;border-bottom:2px solid transparent}
+nav a.link:hover,nav a.link:focus-visible{border-color:var(--green);outline:none}
+.hero{background:var(--green);color:var(--ongreen)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-areas:"t fig" "txt fig";column-gap:clamp(20px,4vw,56px);align-items:center}
+.hero .t{grid-area:t;align-self:end}
+.hero .txt{grid-area:txt;align-self:start}
+.hero .fig{grid-area:fig}
+.hero h1{font-size:clamp(44px,6.4vw,84px);font-weight:700}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);max-width:34em;margin-top:20px}
+.brand span{display:inline}
+.hero .now{margin-top:18px;font-size:16px;max-width:34em}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ongreen)}
+.btn.solid{background:var(--ongreen);color:#eafaf2}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.fig{position:relative;min-height:420px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+.fig text{font:500 15px Inter,sans-serif;fill:var(--ongreen)}
+.fig .dim{opacity:.55}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,4vw,64px)}
+.intro{color:var(--soft);margin-top:14px;max-width:28em}
+.work{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.work li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding:20px 0;border-bottom:1px solid var(--rule)}
+.work p{color:var(--soft);grid-column:1}
+.tags{grid-column:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tags span{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--mist)}
+.state{grid-column:2;grid-row:1;align-self:start;font-size:13px;font-weight:600;white-space:nowrap;padding:4px 12px;border-radius:999px;border:1px solid var(--rule)}
+.state.live{background:var(--green);color:var(--ongreen);border-color:var(--green)}
+.mist{background:var(--mist)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:32px}
+.cols h3{padding-bottom:10px;border-bottom:2px solid var(--green);margin-bottom:12px}
+.cols ul{margin:0;padding:0;list-style:none}
+.cols li{padding:8px 0;border-bottom:1px solid var(--rule)}
+.cols li small{display:block;color:var(--soft);font-size:14px}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px)}
+.duo p+p{margin-top:12px}
+.duo .links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px}
+.duo .links a{font-weight:600;text-decoration-color:var(--green);text-underline-offset:4px;text-decoration-thickness:2px;padding:6px 0}
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:32px;border-top:3px solid var(--green)}
+.path div{padding:16px 16px 0 0;position:relative}
+.path div::before{content:"";position:absolute;top:-9px;left:0;width:14px;height:14px;border-radius:3px;transform:rotate(22.5deg);background:var(--green)}
+.path b{display:block;font:700 18px "Space Grotesk",sans-serif;margin-top:6px}
+.path span{color:var(--soft);font-size:15px}
+footer{background:var(--ongreen);color:#e6f4ec}
+footer h2{color:#fff}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
+.contact{list-style:none;margin:0;padding:0}
+.contact li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #1f3d2f}
+.contact a{color:#7ff0b8;text-underline-offset:4px;overflow-wrap:anywhere}
+.fine{font-size:13px;color:#9fb8ab;margin-top:24px}
+@media(prefers-reduced-motion:no-preference){.draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1.6s ease-out forwards}@keyframes draw{to{stroke-dashoffset:0}}}
+@media(max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"t" "fig" "txt"}.hero .fig{margin-block:16px}.split,footer .wrap{grid-template-columns:minmax(0,1fr)}.cols{grid-template-columns:repeat(2,minmax(0,1fr))}.path{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}}
+@media(max-width:600px){.cols,.duo{grid-template-columns:minmax(0,1fr)}.fig{min-height:300px;margin-block:8px}.brand span{display:none}nav .wrap{gap:8px 16px}.work li{grid-template-columns:minmax(0,1fr)}.state{grid-column:1;grid-row:auto;justify-self:start}nav a.link{font-size:15px}}
+</style>
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg viewBox="0 0 26 26" aria-hidden="true"><polygon points="8,1 18,1 25,8 25,18 18,25 8,25 1,18 1,8" fill="#00a862"/><polygon points="10,6 16,6 20,10 20,16 16,20 10,20 6,16 6,10" fill="none" stroke="#04140c" stroke-width="2"/></svg><span>Wirafa</span></a>
+    <a class="link" href="#work">Work</a>
+    <a class="link" href="#activities">Activities</a>
+    <a class="link" href="#teaching">Teaching</a>
+    <a class="link" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero band" id="top">
+  <div class="wrap">
+    <h1 class="t">Seka Wira Firdana</h1>
+    <div class="txt">
+      <p class="lead">I study mathematics at Universitas Negeri Yogyakarta. Most days that means proofs and problem sets; the rest goes into Python, small web apps, and teaching junior high students why math is less scary than it looks.</p>
+      <p class="now">OCTAGON is my eight-year plan: eight directions I want to grow in, worked on one at a time. Right now the lit ones are mathematics, code, and teaching.</p>
+      <div class="btns">
+        <a class="btn solid" href="https://github.com/Wirafada">GitHub</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="fig" role="img" aria-label="Octagon compass with eight directions: Mathematics, Code, Data and ML, Research, Teaching, Writing, Languages, Design. Mathematics, Code and Teaching are highlighted."><svg id="compass"></svg></div>
+  </div>
+</header>
+
+<section class="band" id="work">
+  <div class="wrap split">
+    <div>
+      <h2>Things I'm building</h2>
+      <p class="intro">Every class I take on Dicoding ends up as a repo. These are the ones worth a look, plus a couple of team projects.</p>
+    </div>
+    <ul class="work" id="worklist"></ul>
+  </div>
+</section>
+
+<section class="band mist" id="activities">
+  <div class="wrap">
+    <h2>Competitions, organisations, learning</h2>
+    <div class="cols" id="cols"></div>
+  </div>
+</section>
+
+<section class="band" id="teaching">
+  <div class="wrap duo">
+    <div>
+      <h2>Teaching</h2>
+      <p style="margin-top:16px">I tutor junior high school math. My goal is to teach olympiad-level classes, so I'm climbing step by step: junior high, then senior high, then national olympiad material.</p>
+    </div>
+    <div>
+      <h2>Writing</h2>
+      <p style="margin-top:16px">I write essays and poems in Indonesian, and keep two YouTube channels for things I make.</p>
+      <div class="links">
+        <a href="https://www.kompasiana.com/sekawirafirdana0431">Kompasiana</a>
+        <a href="https://sajakwirafa.blogspot.com">Blog</a>
+        <a href="https://www.youtube.com/@Wirafio">YouTube: Wirafi</a>
+        <a href="https://www.youtube.com/@Wirafao">YouTube: Wirafa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band mist" id="path">
+  <div class="wrap">
+    <h2>Where I am on the path</h2>
+    <div class="path" id="pathrow"></div>
+  </div>
+</section>
+
+<footer class="band" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Say hello</h2>
+      <p style="margin-top:14px;max-width:30em">Open to tutoring, small web or data projects, and anyone working on math competitions who wants a study partner.</p>
+      <p class="fine">Draft portfolio, built from my own notes in November 2026. Projects marked in progress are not finished yet.</p>
+    </div>
+    <ul class="contact">
+      <li><span>Email</span><a href="mailto:wirafirdana@gmail.com">wirafirdana@gmail.com</a></li>
+      <li><span>GitHub</span><a href="https://github.com/Wirafada">github.com/Wirafada</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/wirafa_">@wirafa_</a></li>
+      <li><span>Kompasiana</span><a href="https://www.kompasiana.com/sekawirafirdana0431">sekawirafirdana0431</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+{
+  const work = [
+    {name:"OCTAGON", text:"A command-line assistant that reads my Notion and tells me what matters today: deadlines, top three tasks, and which repos are due this month. Python standard library only, with tests.", tags:["Python","Notion API","CLI"], state:"In progress", live:true},
+    {name:"Palm oil quality research proposal", text:"For the BPDP 2026 student research competition: estimating the quality of cooking palm oil with multimodal sensors and machine learning.", tags:["Research","Machine learning","Sensors"], state:"Submitted"},
+    {name:"BESMART redesign", text:"DIMAS-TI 2026, UI/UX track. A team of three redesigning the student experience of BESMART, UNY's learning platform.", tags:["UI/UX","Figma","Team"], state:"Submitted"},
+    {name:"Asah 2026 capstone", text:"Capstone project with my Asah team for a local business, Gurami Konsumsi Mang Ujang.", tags:["Full-stack","Team"], state:"In progress", live:true},
+    {name:"Bookshelf API and OpenJob API", text:"REST APIs from Dicoding's back-end classes: routing, validation, JWT auth, and PostgreSQL migrations.", tags:["Node.js","Express","PostgreSQL"], state:"In progress", live:true},
+    {name:"Notes app", text:"A single-page notes app in React with Context and custom hooks, talking to a REST API.", tags:["React","JavaScript"], state:"Class project"}
+  ];
+  const cols = [
+    {title:"Competitions", items:[["DIMAS-TI 2026","UI/UX, team entry"],["BPDP student research competition 2026","Research proposal"],["LEMM National 2026","Participant"],["Preparing: ONMIPA-PT and IMC","University math olympiads"]]},
+    {title:"Organisations", items:[["SPARTA 26","Vice chair"],["Class arts night (PENSI Angkatan)","Script lead"],["Course representative","Liaison between class and lecturer"]]},
+    {title:"Learning", items:[["Asah 2026 by Dicoding","Full-stack track"],["Coding Camp 2026, DBS Foundation","Front-end and React"],["Microsoft Elevate","Python, data, machine learning"],["Languages","Indonesian, English; Japanese in progress"]]}
+  ];
+  const path = [
+    {when:"2026", what:"Mathematics, UNY", note:"First year, first proofs"},
+    {when:"2026", what:"Asah and Dicoding", note:"Back-end, React, cloud"},
+    {when:"Now", what:"Olympiad training", note:"Calculus and combinatorics"},
+    {when:"Next", what:"Research and study abroad", note:"Building toward a graduate scholarship"}
+  ];
+  document.getElementById("worklist").innerHTML = work.map(w =>
+    `<li><h3>${w.name}</h3><span class="state${w.live ? " live" : ""}">${w.state}</span><p>${w.text}</p><div class="tags">${w.tags.map(t => `<span>${t}</span>`).join("")}</div></li>`).join("");
+  document.getElementById("cols").innerHTML = cols.map(c =>
+    `<div><h3>${c.title}</h3><ul>${c.items.map(([a,b]) => `<li>${a}<small>${b}</small></li>`).join("")}</ul></div>`).join("");
+  document.getElementById("pathrow").innerHTML = path.map(p =>
+    `<div><span>${p.when}</span><b>${p.what}</b><span>${p.note}</span></div>`).join("");
+
+  const dirs = [
+    {n:"Mathematics", s:"Math", on:true},
+    {n:"Code", s:"Code", on:true},
+    {n:"Data & ML", s:"Data"},
+    {n:"Research", s:"Research"},
+    {n:"Teaching", s:"Teach", on:true},
+    {n:"Writing", s:"Write"},
+    {n:"Languages", s:"Lang"},
+    {n:"Design", s:"Design"}
+  ];
+  const svg = document.getElementById("compass");
+  const draw = () => {
+    const W = svg.clientWidth, H = svg.clientHeight;
+    if (!W || !H) return;
+    const narrow = W < 460;
+    const pad = narrow ? 72 : 100;
+    const cx = W / 2, cy = H / 2;
+    const R = Math.max(60, Math.min(W / 2 - pad, H / 2 - 34));
+    const pt = (i, r) => {
+      const a = -Math.PI / 2 + i * Math.PI / 4;
+      return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+    };
+    const oct = r => Array.from({length: 8}, (_, i) => pt(i + 0.5, r).map(v => v.toFixed(1)).join(",")).join(" ");
+    const per = 8 * 2 * R * Math.sin(Math.PI / 8);
+    let out = "";
+    [0.34, 0.67].forEach(k => { out += `<polygon points="${oct(R * k)}" fill="none" stroke="#04140c" stroke-opacity=".28" stroke-width="1"/>`; });
+    out += `<polygon class="draw" style="--len:${per.toFixed(0)}" points="${oct(R)}" fill="#04140c" fill-opacity=".06" stroke="#04140c" stroke-width="3" stroke-linejoin="round"/>`;
+    dirs.forEach((d, i) => {
+      const [x, y] = pt(i, R * 0.92);
+      out += `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#04140c" stroke-width="${d.on ? 5 : 1.5}" stroke-linecap="round" ${d.on ? "" : 'stroke-opacity=".45"'}/>`;
+      if (d.on) out += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="9" fill="#eafaf2" stroke="#04140c" stroke-width="3"/>`;
+      const [lx, ly] = pt(i, R + (narrow ? 18 : 26));
+      const c = Math.cos(-Math.PI / 2 + i * Math.PI / 4);
+      const anchor = Math.abs(c) < 0.2 ? "middle" : c > 0 ? "start" : "end";
+      out += `<text x="${lx.toFixed(1)}" y="${(ly + 5).toFixed(1)}" text-anchor="${anchor}" class="${d.on ? "" : "dim"}" font-weight="${d.on ? 700 : 500}">${narrow ? d.s : d.n}</text>`;
+    });
+    out += `<circle cx="${cx}" cy="${cy}" r="6" fill="#04140c"/>`;
+    svg.innerHTML = out;
+  };
+  const ro = new ResizeObserver(draw);
+  ro.observe(svg);
+  draw();
+}
+</script>
+</body>
+</html>
