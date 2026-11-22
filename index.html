@@ -39,7 +39,7 @@ nav a.link:hover,nav a.link:focus-visible{border-color:var(--green);outline:none
 .hero .t{grid-area:t;align-self:end}
 .hero .txt{grid-area:txt;align-self:start}
 .hero .fig{grid-area:fig}
-.hero h1{font-size:clamp(44px,6.4vw,84px);font-weight:700}
+.hero h1{font-size:clamp(40px,5.6vw,76px);font-weight:700}
 .hero .lead{font-size:clamp(17px,1.6vw,20px);max-width:34em;margin-top:20px}
 .brand span{display:inline}
 .hero .now{margin-top:18px;font-size:16px;max-width:34em}
@@ -57,12 +57,13 @@ nav a.link:hover,nav a.link:focus-visible{border-color:var(--green);outline:none
 .work{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
 .work li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px;padding:20px 0;border-bottom:1px solid var(--rule)}
 .work p{color:var(--soft);grid-column:1}
+.work h3 a{text-decoration-color:var(--green);text-underline-offset:4px;text-decoration-thickness:2px}
 .tags{grid-column:1;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
 .tags span{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--mist)}
 .state{grid-column:2;grid-row:1;align-self:start;font-size:13px;font-weight:600;white-space:nowrap;padding:4px 12px;border-radius:999px;border:1px solid var(--rule)}
 .state.live{background:var(--green);color:var(--ongreen);border-color:var(--green)}
 .mist{background:var(--mist)}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:32px}
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:32px}
 .cols h3{padding-bottom:10px;border-bottom:2px solid var(--green);margin-bottom:12px}
 .cols ul{margin:0;padding:0;list-style:none}
 .cols li{padding:8px 0;border-bottom:1px solid var(--rule)}
@@ -101,12 +102,13 @@ footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);ga
 
 <header class="hero band" id="top">
   <div class="wrap">
-    <h1 class="t">Seka Wira Firdana</h1>
+    <h1 class="t">Seka Wira Tamma Aji Firdana</h1>
     <div class="txt">
-      <p class="lead">I study mathematics at Universitas Negeri Yogyakarta. Most days that means proofs and problem sets; the rest goes into Python, small web apps, and teaching junior high students why math is less scary than it looks.</p>
+      <p class="lead">I study mathematics at Universitas Negeri Yogyakarta. Most days that means proofs and problem sets. The rest of the week goes into building things with JavaScript, learning front-end and AI through Asah, and tutoring English at Drill Education.</p>
       <p class="now">OCTAGON is my eight-year plan: eight directions I want to grow in, worked on one at a time. Right now the lit ones are mathematics, code, and teaching.</p>
       <div class="btns">
         <a class="btn solid" href="https://github.com/Wirafada">GitHub</a>
+        <a class="btn solid" href="https://www.linkedin.com/in/seka-wira-tamma-aji-firdana-8b5310313">LinkedIn</a>
         <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
@@ -126,7 +128,7 @@ footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);ga
 
 <section class="band mist" id="activities">
   <div class="wrap">
-    <h2>Competitions, organisations, learning</h2>
+    <h2>Awards and activities</h2>
     <div class="cols" id="cols"></div>
   </div>
 </section>
@@ -135,7 +137,8 @@ footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);ga
   <div class="wrap duo">
     <div>
       <h2>Teaching</h2>
-      <p style="margin-top:16px">I tutor junior high school math. My goal is to teach olympiad-level classes, so I'm climbing step by step: junior high, then senior high, then national olympiad material.</p>
+      <p style="margin-top:16px">I teach English at Drill Education (since September 2026) and tutor junior high math. In both, most of the job is cutting the material into steps small enough that students can follow and practise on their own.</p>
+      <p>Long term I want to teach olympiad classes, so I'm climbing one level at a time: junior high, senior high, then national olympiad material.</p>
     </div>
     <div>
       <h2>Writing</h2>
@@ -161,12 +164,13 @@ footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);ga
   <div class="wrap">
     <div>
       <h2>Say hello</h2>
-      <p style="margin-top:14px;max-width:30em">Open to tutoring, small web or data projects, and anyone working on math competitions who wants a study partner.</p>
-      <p class="fine">Draft portfolio, built from my own notes in November 2026. Projects marked in progress are not finished yet.</p>
+      <p style="margin-top:14px;max-width:30em">I'm looking for a front-end or AI internship. Also open to tutoring work, and to anyone preparing for math competitions who wants a study partner.</p>
+      <p class="fine">Last updated November 2026. Projects marked in progress aren't finished yet.</p>
     </div>
     <ul class="contact">
       <li><span>Email</span><a href="mailto:wirafirdana@gmail.com">wirafirdana@gmail.com</a></li>
       <li><span>GitHub</span><a href="https://github.com/Wirafada">github.com/Wirafada</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/seka-wira-tamma-aji-firdana-8b5310313">Seka Wira Tamma Aji Firdana</a></li>
       <li><span>Instagram</span><a href="https://www.instagram.com/wirafa_">@wirafa_</a></li>
       <li><span>Kompasiana</span><a href="https://www.kompasiana.com/sekawirafirdana0431">sekawirafirdana0431</a></li>
     </ul>
@@ -177,25 +181,27 @@ footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);ga
 {
   const work = [
     {name:"OCTAGON", text:"A command-line assistant that reads my Notion and tells me what matters today: deadlines, top three tasks, and which repos are due this month. Python standard library only, with tests.", tags:["Python","Notion API","CLI"], state:"In progress", live:true},
+    {name:"OpenJob API", url:"https://github.com/Wirafada/openjob-api", text:"A solo REST API for job listings, companies, categories, applications and bookmarks. JWT access and refresh tokens, bcrypt for passwords, Joi for request validation, and a seven-table PostgreSQL schema managed with node-pg-migrate. It passes all 296 checks in the OpenJob API Test V1 Postman collection.", tags:["Node.js","Express.js","PostgreSQL","JWT"], state:"Done"},
+    {name:"Bookshelf API", url:"https://github.com/Wirafada/bookshelf-api-dicoding", text:"CRUD endpoints for books with Nanoid IDs, plus filters by name, reading status and completion. Passes all 104 checks in Dicoding's Bookshelf API Postman collection.", tags:["Node.js","Express.js","Nanoid"], state:"Done"},
+    {name:"Asah 2026 capstone", text:"Capstone project with my Asah team for a local business, Gurami Konsumsi Mang Ujang.", tags:["Team","Asah 2026"], state:"In progress", live:true},
     {name:"Palm oil quality research proposal", text:"For the BPDP 2026 student research competition: estimating the quality of cooking palm oil with multimodal sensors and machine learning.", tags:["Research","Machine learning","Sensors"], state:"Submitted"},
     {name:"BESMART redesign", text:"DIMAS-TI 2026, UI/UX track. A team of three redesigning the student experience of BESMART, UNY's learning platform.", tags:["UI/UX","Figma","Team"], state:"Submitted"},
-    {name:"Asah 2026 capstone", text:"Capstone project with my Asah team for a local business, Gurami Konsumsi Mang Ujang.", tags:["Full-stack","Team"], state:"In progress", live:true},
-    {name:"Bookshelf API and OpenJob API", text:"REST APIs from Dicoding's back-end classes: routing, validation, JWT auth, and PostgreSQL migrations.", tags:["Node.js","Express","PostgreSQL"], state:"In progress", live:true},
     {name:"Notes app", text:"A single-page notes app in React with Context and custom hooks, talking to a REST API.", tags:["React","JavaScript"], state:"Class project"}
   ];
   const cols = [
+    {title:"Awards", items:[["3rd runner-up, National Inspiring Short Story Writing Olympiad 2025–2026","Global House National Olympic Committee, Jan 2026"],["3rd place, short story writing, FLS3N Jombang Regency","Jombang Branch Office of Education, Jun 2025"],["1st place, non-fiction narrative writing","SMA Negeri Mojoagung, Jan 2025"]]},
     {title:"Competitions", items:[["DIMAS-TI 2026","UI/UX, team entry"],["BPDP student research competition 2026","Research proposal"],["LEMM National 2026","Participant"],["Preparing: ONMIPA-PT and IMC","University math olympiads"]]},
-    {title:"Organisations", items:[["SPARTA 26","Vice chair"],["Class arts night (PENSI Angkatan)","Script lead"],["Course representative","Liaison between class and lecturer"]]},
-    {title:"Learning", items:[["Asah 2026 by Dicoding","Full-stack track"],["Coding Camp 2026, DBS Foundation","Front-end and React"],["Microsoft Elevate","Python, data, machine learning"],["Languages","Indonesian, English; Japanese in progress"]]}
+    {title:"Organisations", items:[["DEPDIKMAT (Departemen Pendidikan Matematika)","Vice chair, Sep 2026–present"],["SPARTA 26 (Sport and Art Mathematic)","Vice chair of the organising committee, Oct 2026"],["Class arts night (PENSI Angkatan)","Script lead"],["Course representative","Liaison between class and lecturer"]]},
+    {title:"Learning", items:[["Asah led by Dicoding","Front-End AI Developer track, 2026, in progress"],["Coding Camp 2026 by DBS Foundation","Full-Stack Developer track"],["Microsoft Elevate Training Center × Dicoding","Python, data processing, Microsoft Fabric, machine learning, generative AI on Azure"],["Digital Marketing Professional Certification","LPK Lentera Azzahra Center, Apr 2024"],["Languages","Indonesian, English (intermediate)"]]}
   ];
   const path = [
-    {when:"2026", what:"Mathematics, UNY", note:"First year, first proofs"},
-    {when:"2026", what:"Asah and Dicoding", note:"Back-end, React, cloud"},
+    {when:"2026", what:"Mathematics, UNY", note:"First year, expected to graduate in 2030"},
+    {when:"2026", what:"Asah, Coding Camp, Microsoft Elevate", note:"Back-end, front-end, AI, cloud"},
     {when:"Now", what:"Olympiad training", note:"Calculus and combinatorics"},
     {when:"Next", what:"Research and study abroad", note:"Building toward a graduate scholarship"}
   ];
   document.getElementById("worklist").innerHTML = work.map(w =>
-    `<li><h3>${w.name}</h3><span class="state${w.live ? " live" : ""}">${w.state}</span><p>${w.text}</p><div class="tags">${w.tags.map(t => `<span>${t}</span>`).join("")}</div></li>`).join("");
+    `<li><h3>${w.url ? `<a href="${w.url}">${w.name} ↗</a>` : w.name}</h3><span class="state${w.live ? " live" : ""}">${w.state}</span><p>${w.text}</p><div class="tags">${w.tags.map(t => `<span>${t}</span>`).join("")}</div></li>`).join("");
   document.getElementById("cols").innerHTML = cols.map(c =>
     `<div><h3>${c.title}</h3><ul>${c.items.map(([a,b]) => `<li>${a}<small>${b}</small></li>`).join("")}</ul></div>`).join("");
   document.getElementById("pathrow").innerHTML = path.map(p =>
